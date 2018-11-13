@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+<div>
+  <h2>Your Shipments</h2>
+</div>
+
+<div>
+  <table class="table table-striped table-bordered table-condensed">
+    <thead>
+    <tr>
+      <th>Flight Ident</th>
+      <th>Tracking code</th>
+      <th>Weight</th>
+      <th>Length</th>
+      <th>Height</th>
+      <th>Width</th>
+      <th>Product</th>
+      <th>Quotation</th>
+      <th>Status</th>
+      <th>Service Level</th>
+      <th>Cbm</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @shipments.each do |shipment| %>
+      <tr>
+        <td><%= shipment.ident %></td>
+        <td><%= shipment.tracking_code %></td>
+        <td><%= shipment.weight %></td>
+        <td><%= shipment.length %></td>
+        <td><%= shipment.height %></td>
+        <td><%= shipment.width %></td>
+        <td><%= shipment.product %></td>
+        <td><%= shipment.quotation %></td>
+        <td><%= shipment.status %></td>
+        <td><%= shipment.service_level %></td>
+        <td><%= shipment.cbm %></td>
+        <% if shipment.status === "pending" %>
+          <td><%= link_to 'Manage Booking', edit_shipment_path(shipment) %></td>
+        <% end %>
+        <% if shipment.status === "active" %>
+          <td><%= link_to 'Track Shipment', track_shipment_path(:id => shipment.id, :ident => shipment.ident, :departure => shipment.etd.to_i) %></td>
+        <% end %>
+        <td><%= link_to 'Destroy', shipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<br>
+

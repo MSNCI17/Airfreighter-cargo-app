@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ident: MyString
+  tracking_code: MyString
+  weight: 
+  length: 
+  height: 
+  width: 
+  product: MyString
+  etd: 2018-07-29 23:04:39
+  eta: 2018-07-29 23:04:39
+  service_level: 1
+  quotation: 
+  status: MyString
+  cbm: 
+  user_id: 
+
+two:
+  ident: MyString
+  tracking_code: MyString
+  weight: 
+  length: 
+  height: 
+  width: 
+  product: MyString
+  etd: 2018-07-29 23:04:39
+  eta: 2018-07-29 23:04:39
+  service_level: 1
+  quotation: 
+  status: MyString
+  cbm: 
+  user_id: 

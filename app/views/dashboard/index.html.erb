@@ -1,0 +1,62 @@
+<div>
+  <h3>AirFreighter Dashboard</h3>
+</div>
+
+<div>
+  <%= "You can search for flights below: " %>
+</div>
+
+
+<div>
+  <%= form_tag(dashboard_index_path, method: :get) do %>
+    <%= label_tag(:destination, "Destination: ") %>
+    <%= text_field_tag :destination, nil, placeholder: 'KLAX, SFO' %>
+    <%= label_tag(:origin, "Origin: ") %>
+    <%= text_field_tag :origin, nil, placeholder: 'KLAX, LHR, SFO' %>
+    <%= label_tag(:start_date, "Start Date: ") %>
+    <%= text_field_tag(:start_date, nil, class: 'datepicker') %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
+<div class="clearfix"></div>
+
+
+<% if @flights %>
+  <div class="search-text">
+    <%= "We have fetched these flights for you" %>
+  </div>
+
+  <div>
+    <table class="table table-striped table-bordered table-condensed">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Ident</th>
+          <th>Aircraft Type</th>
+          <th>Arrival Time</th>
+          <th>Departure Time</th>
+          <th>Destination</th>
+          <th>Origin</th>
+          <th>Select</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @flights.each do |flight| %>
+        <tr>
+          <td></td>
+          <td><%= "#{flight.ident}" %></td>
+          <td><%= "#{flight.aircrafttype}" %></td>
+<!--          <td><%#= "#{flight.arrivaltime}" %></td>-->
+<!--          <td><%#= "#{flight.departuretime}" %></td>-->
+          <td><%= local_time("#{Time.at(flight.arrivaltime).to_datetime}") %></td>
+          <td><%= local_time("#{Time.at(flight.departuretime).to_datetime}") %></td>
+          <td><%= "#{flight.destination}" %></td>
+          <td><%= "#{flight.origin}" %></td>
+          <td><%= link_to "Select Flight", new_shipment_path(:flight_ident => flight.ident, :departure_time => flight.departuretime) %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+<% end %>

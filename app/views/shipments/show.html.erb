@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ident:</strong>
+  <%= @shipment.ident %>
+</p>
+
+<p>
+  <strong>Tracking code:</strong>
+  <%= @shipment.tracking_code %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @shipment.weight %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @shipment.length %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @shipment.height %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @shipment.width %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @shipment.product %>
+</p>
+
+<p>
+  <strong>Etd:</strong>
+  <%= @shipment.etd %>
+</p>
+
+<p>
+  <strong>Eta:</strong>
+  <%= @shipment.eta %>
+</p>
+
+<p>
+  <strong>Service level:</strong>
+  <%= @shipment.service_level %>
+</p>
+
+<p>
+  <strong>Quotation:</strong>
+  <%= @shipment.quotation %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @shipment.status %>
+</p>
+
+<p>
+  <strong>Cbm:</strong>
+  <%= @shipment.cbm %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @shipment.user %>
+</p>
+
+<%= link_to 'Edit', edit_shipment_path(@shipment) %> |
+<%= link_to 'Back', shipments_path %>

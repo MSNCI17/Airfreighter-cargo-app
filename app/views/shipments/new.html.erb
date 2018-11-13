@@ -1,0 +1,57 @@
+<div>
+  <h3>Make Shipment Process</h3>
+</div>
+
+<div>
+  <%= "You can make your shipment here with Flight: #{@flight_ident}" %>
+</div>
+
+<div>
+  <%= form_for @shipment do |f| %>
+    <%= f.hidden_field :ident, :value => @flight_ident %>
+    <%= f.hidden_field :etd, :value => @flight_departure_time %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <fieldset class="input">
+      <%= f.label 'Length in cm' %>
+      <%= f.number_field :length %>
+    </fieldset>
+    <fieldset class="input">
+      <%= f.label 'Width in cm' %>
+      <%= f.number_field :width %>
+    </fieldset>
+    <fieldset class="input">
+      <%= f.label 'Height in cm' %>
+      <%= f.number_field :height %>
+    </fieldset>
+    <fieldset class="input">
+      <%= f.label :weight %>
+      <%= f.number_field :weight %>
+    </fieldset>
+    <fieldset class="input">
+      <%= f.label :no_of_products %>
+      <%= f.number_field :no_of_products, :value => 1 %>
+    </fieldset>
+    <fieldset class="input">
+      <%= f.label :product %>
+      <%= f.text_field :product %>
+    </fieldset>
+    <fieldset class="input">
+      <%= f.label :origin %>
+      <%= f.select :origin, options_for_select(['Australia', 'Singapore/Taiwan/China', 'America', 'Europe']) %>
+    </fieldset>
+    <fieldset class="input">
+      <%= f.label :destination %>
+      <%= f.select :destination, options_for_select(['Europe']) %>
+    </fieldset>
+    <fieldset class="input">
+      <%= f.label :service_level %>
+      <%= f.select :service_level, options_for_select(['SL1', 'SL2', 'SL3']) %>
+    </fieldset>
+
+
+    <fieldset class="button">
+      <%= f.submit "Request Quotation" %>
+    </fieldset>
+  <% end %>
+</div>
+<div class="clearfix"></div>
