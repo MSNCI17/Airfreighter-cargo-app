@@ -1,1 +1,6 @@
-– Air freighter App.- This app was developed in AWS C9 enviroment using the MVC approach and the relevant Ruby gems along with HTML with embedded Ruby code on the AWS Cloud 9 platform with flight XML data API integration from a 3rd party. 
+– Air freighter App.- This app was developed in AWS C9 enviroment using the MVC approach and the relevant Ruby gems along with HTML with embedded Ruby code on the AWS Cloud 9 platform with flight XML data API integration from a 3rd party.
+(https://uk.flightaware.com/commercial/flightxml/documentation2.rvt)
+
+
+
+
