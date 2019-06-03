@@ -1,5 +1,49 @@
-– Air freighter App.- This app was developed in AWS C9 enviroment using the MVC approach and the relevant Ruby gems along with HTML with embedded Ruby code on the AWS Cloud 9 platform with flight XML data API integration from a 3rd party.
-(https://uk.flightaware.com/commercial/flightxml/documentation2.rvt)
+– Air freighter App.- 
+Rails REST API fetching flight XML data with API integration from a 3rd party.
+(https://uk.flightaware.com/commercial/data/)
+
+Concept - 
+Run an rails app to fetch cargo flight only data from a 3rd party to enable Users(exporters/airfreight agents) to request quotation and make a booking for oversize cargo along with tracking of booked shipments.
+
+This app was developed in AWS C9 enviroment with flight XML data API integration from a 3rd party.
+(https://uk.flightaware.com/commercial/data/)
+
+Prerequisites
+ruby 2.4.1
+rails', '4.2.8'
+
+
+
+
+3rd party Vendor API Flight Data REQUIREMENTS:
+Ruby 1.9 or above
+FlightXML2 JSON REST Client for Ruby by auzroz: github
+gem install FlightXML2RESTDriver
+Save the following file as test.rb, but substitute your actual username and API key:
+
+
+#!/usr/bin/env ruby
+
+require './FlightXML2RESTDriver.rb'
+require './FlightXML2Rest.rb'
+
+username = 'YourUserName'
+apiKey = 'YourAPIKey'
+
+# This provides the basis for all future calls to the API
+test = FlightXML2REST.new(username, apiKey)
+
+# Enroute
+print "Aircraft en route to KSMO:\n"
+result = test.Enroute(EnrouteRequest.new('KSMO', 'ga', 15, 0 ))
+pp result.enrouteResult
+
+    
+Run commands:
+
+
+./test.rb
+    
 
 
 
