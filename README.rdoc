@@ -3,19 +3,27 @@ Rails REST API fetching flight XML data with API integration from a 3rd party.
 (https://uk.flightaware.com/commercial/data/)
 
 Concept - 
-Run an rails app to fetch cargo flight only data from a 3rd party to enable Users(exporters/airfreight agents) to request quotation and make a booking for oversize cargo along with tracking of booked shipments.
+Run an rails app to fetch cargo flight only data from a 3rd party to enable Users(exporters/airfreight agents) to request
+a quotation and make a booking for oversize cargo along with tracking of booked shipments.
 
 This app was developed in AWS C9 enviroment with flight XML data API integration from a 3rd party.
 (https://uk.flightaware.com/commercial/data/)
 
 Prerequisites
+
 ruby 2.4.1
+
 rails', '4.2.8'
 
+postgres 9.2.4
 
+See Gem file for installed ruby gems
+
+Devise for Authentication.
 
 
 3rd party Vendor API Flight Data REQUIREMENTS:
+
 Ruby 1.9 or above
 FlightXML2 JSON REST Client for Ruby by auzroz: github
 gem install FlightXML2RESTDriver
@@ -25,9 +33,11 @@ Save the following file as test.rb, but substitute your actual username and API 
 #!/usr/bin/env ruby
 
 require './FlightXML2RESTDriver.rb'
+
 require './FlightXML2Rest.rb'
 
 username = 'YourUserName'
+
 apiKey = 'YourAPIKey'
 
 # This provides the basis for all future calls to the API
@@ -39,11 +49,22 @@ result = test.Enroute(EnrouteRequest.new('KSMO', 'ga', 15, 0 ))
 pp result.enrouteResult
 
     
-Run commands:
+Run following commands to view dev enviroment in C9.
 
+$ sudo su - postgres
 
-./test.rb
-    
+postgres=# create user "ec2-user" superuser;
+
+$ psql -U ec2-user -W
+
+$ rake db:create
+
+rake db:migrate
+
+Start the postresql with
+‘$ sudo service postgresql start’ prior to starting the rails server - 
+'$ rails server -b $IP -p $PORT'
+  
 
 
 
