@@ -1,5 +1,6 @@
 – Air freighter App.- 
-Rails REST API fetching flight XML data with API integration from a 3rd party.
+
+Rails REST API fetching flight XML data from 3rd party flight data platform.
 (https://uk.flightaware.com/commercial/data/)
 
 Concept - 
@@ -61,11 +62,14 @@ $ rake db:create
 
 rake db:migrate
 
-Start the postresql with
-‘$ sudo service postgresql start’ prior to starting the rails server - 
-'$ rails server -b $IP -p $PORT'
+Start the postresql with:
+
+$ sudo service postgresql start
+
+prior to starting the rails server - 
+
+$ rails server -b $IP -p $PORT
   
 
-
-
+Application is still under development.
 
