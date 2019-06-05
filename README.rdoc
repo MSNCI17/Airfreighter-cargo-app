@@ -1,4 +1,4 @@
-– Air freighter App.-
+# Air freighter App
 
 Rails REST API fetching flight XML data from 3rd party flight data platform. (uk.flightaware.com/commercial/data/)
 
@@ -6,7 +6,7 @@ Concept - Run an rails app to fetch cargo flight only data from a 3rd party to e
 
 This app was developed in AWS C9 enviroment with flight XML data API integration from a 3rd party. (uk.flightaware.com/commercial/data/)
 
-Prerequisites
+# Prerequisites
 
 ruby 2.4.1
 
@@ -18,7 +18,7 @@ See Gem file for installed ruby gems
 
 Devise for Authentication.
 
-3rd party Vendor API Flight Data REQUIREMENTS:
+# 3rd party Vendor API Flight Data REQUIREMENTS:
 
 Ruby 1.9 or above FlightXML2 JSON REST Client for Ruby by auzroz: github gem install FlightXML2RESTDriver Save the following file as test.rb, but substitute your actual username and API key:
 
@@ -36,7 +36,7 @@ apiKey = 'YourAPIKey'
 
 # Enroute print “Aircraft en route to KSMO:n” result = test.Enroute(EnrouteRequest.new('KSMO', 'ga', 15, 0 )) pp result.enrouteResult
 
-Run following commands to view dev enviroment in C9.
+# Run following commands to view dev enviroment in C9.
 
 $ sudo su - postgres
 
@@ -56,4 +56,4 @@ prior to starting the rails server -
 
 $ rails server -b $IP -p $PORT
 
-Application is still under development.
+# Application is still under development.
