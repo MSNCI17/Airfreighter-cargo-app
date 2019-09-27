@@ -17,10 +17,13 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
-
+  username: user_1
+  password: test123
+  host: localhost
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    
 development:
   <<: *default
   database: airfrieghter_development
@@ -32,7 +35,7 @@ development:
   #username: airfrieghter
 
   # The password associated with the postgres role (username).
-  password: airfreighter
+  password: test123
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -81,5 +84,5 @@ test:
 production:
   <<: *default
   database: airfrieghter_production
-  username: airfrieghter
-  password: <%= ENV['AIRFRIEGHTER_DATABASE_PASSWORD'] %>
+  username: user_1
+  password: <%= ENV['test123_DATABASE_PASSWORD'] %>
