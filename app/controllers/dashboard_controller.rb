@@ -10,12 +10,14 @@ class DashboardController < ApplicationController
     @title = 'AirFreighter Homepage'
     if checkParams(params)
       search(params)
-    end
-  end
+    end 
+   end
+     
 
   def checkParams(params)
-    return true if params[:destination] || params[:origin] || params[:start_date] else false
-  end
+    return true if params[:destination] || params[:origin] || params[:start_date]
+    end
+    
 
   def search(params)
 
@@ -37,3 +39,8 @@ class DashboardController < ApplicationController
     end
   end
 end
+
+
+
+
+ 
