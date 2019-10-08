@@ -93,10 +93,9 @@ $ rails s
 ```
 
 ## Images -
+<img src = "app/images/Airfrieghter-login.png" width = "500" height = "300">
 
-  
-
-
+## Remaining app images in *Airfreighter-cargo-app/app/images/*  folder.
 
 =======
 
