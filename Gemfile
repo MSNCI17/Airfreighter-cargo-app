@@ -28,7 +28,7 @@ gem 'omniauth'
 
 gem 'popper_js', '~> 1.14.3'
 
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 
 gem 'FlightXML2RESTDriver'
 gem 'rest-client'
