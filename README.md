@@ -1,4 +1,6 @@
 
+**#"This repository is archived and no longer maintained"**
+
 # Air freighter Cargo App.
 
 Rails REST API fetching flight XML data from 3rd party flight data platform.
